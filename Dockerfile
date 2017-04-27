@@ -9,11 +9,11 @@ FROM ubuntu:latest
 
 MAINTAINER  jia <jia.tian@me.com>
 
-ENV VERSION v3.0.4
+ENV VERSION v3.0.6
 ENV DEPENDENCIES libtool libpcre3-dev libev-dev libudns-dev ca-certificates
 ENV BUILD_DEPENDENCIES gettext build-essential autoconf asciidoc xmlto automake git curl
-ENV LIBSODIUM_VER 1.0.11
-ENV MBEDTLS_VER 2.4.0
+ENV LIBSODIUM_VER 1.0.12
+ENV MBEDTLS_VER 2.4.2
 
 #For amd64
 #RUN sed -i -- 's/archive.ubuntu.com/mirrors.163.com/g' /etc/apt/sources.list
