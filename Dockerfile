@@ -1,7 +1,7 @@
 FROM alpine:latest
 
 # for chinese user
-RUN sed -i 's/dl-cdn.alpinelinux.org/mirrors.ustc.edu.cn/g' /etc/apk/repositories
+#RUN sed -i 's/dl-cdn.alpinelinux.org/mirrors.ustc.edu.cn/g' /etc/apk/repositories
 RUN apk update && apk add --no-cache build-base git autoconf automake gettext pcre-dev libtool asciidoc xmlto udns-dev libev-dev libsodium-dev mbedtls-dev linux-headers && \
     git clone https://github.com/shadowsocks/shadowsocks-libev /tmp/shadowsocks-libev && \
     cd /tmp/shadowsocks-libev && git submodule update --init --recursive && \
