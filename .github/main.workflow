@@ -1,16 +1,15 @@
 workflow "Build and push to docker hub" {
   on = "push"
-  resolves = [ "Push docker image to docker hub" ]
+  resolves = ["Push to docker hub"]
 }
 
-action "Build docker image" {
+action "Build" {
   uses = "docker://docker:stable"
-  args = [ "build", "-t", "hitian/ss", "."]
+  args = ["build", "-t", "hitian/ss", "."]
 }
 
-action "Push docker image to docker hub" {
+action "Push to docker hub" {
   uses = "docker://docker:stable"
-  needs = [ "Build docker image" ]
+  needs = ["Build"]
   args = "push hitian/ss"
 }
-
