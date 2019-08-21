@@ -1,6 +1,11 @@
 workflow "Build and push to docker hub" {
   on = "push"
-  resolves = ["Push to docker hub"]
+  resolves = ["Push to DockerHub"]
+}
+
+action "Login DockerHub" {
+  uses = "actions/docker/login@master"
+  secrets = ["DOCKER_USERNAME", "DOCKER_PASSWORD"]
 }
 
 action "Build" {
@@ -8,8 +13,8 @@ action "Build" {
   args = ["build", "-t", "hitian/ss", "."]
 }
 
-action "Push to docker hub" {
+action "Push to DockerHub" {
   uses = "docker://docker:stable"
-  needs = ["Build"]
+  needs = ["Build", "Login DockerHub"]
   args = "push hitian/ss"
 }
