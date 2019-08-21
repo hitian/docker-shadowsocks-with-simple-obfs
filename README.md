@@ -1,3 +1,7 @@
+# shadowsocks-libev with simple-obfs
+
+**Deprecated**  use [v2ray-plugin](https://github.com/hitian/docker-shadowsocks-with-v2ray-plugin) instead
+
 ## usage example
 
 ### example
